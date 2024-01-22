@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -120,3 +121,22 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__ . '/auth.php';
+
+Route::resource('post', 'PostController');
+Route::resource('post', 'PostController');
+
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\VehicleController;
+
+// Route::resource('post', 'PostController');
+Route::resource('post', PostController::class);
+
+ //Route::resource('profile', 'ProfileController');
+ //Route::resource('user', 'UserController');
+ //Route::resource('vehicle', 'VehicleController');
+
+ Route::resource('profile', ProfileController::class);
+ Route::resource('user', UserController::class);
+ Route::resource('vehicle', VehicleController::class);
